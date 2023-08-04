@@ -1,0 +1,56 @@
+{
+  "name": "Memory Leak Test",
+  "description": "Proof of Extension",
+  "manifest_version": 3,
+  "action": {},
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "externally_connectable": {
+    "ids": [
+      "*"
+    ],
+    "matches": [
+    ]
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtzpZzsxjYwREUAXPL4Vfp++TM0CV4CsRGxp+WIscs6gRGA1FYgFLStuR+1HvYZK2NfH7I0t6//21Dawb0+6Icutxk5/5u+lfW523x3xXtwyYfzchwsNnSqIP4Eu1H3mHOXsMbRj/oOYKuu+Uwq1/CDrhSlE0RLJ86RtMmtjAgwQ181mo7Nklk/azQcBtnlcNFiKB+MpM4C5H+Id+mLh+9h/uQXGrVyw8zHQ/EVPgCVIIGE249sOB2EGBwhVqKhchoC7T70xO4HsAokvpLM3Kp80yG7/S5/JOowuIkWz/Tn1romBNg4FmVbam0TITrbXC49kK3hR6sC45mbEPdNWMuQIDAQAB",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background-wrapper.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "/popup.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/popup.js",
+        "/popup.js.map"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "version": "1.0.0"
+}
