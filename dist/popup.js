@@ -23,7 +23,6 @@ button2.innerText = 'Button 2';
 
 appRoot.appendChild(button);
 appRoot.appendChild(button2);
-appRoot.appendChild(button3);
 const url = 'https://cdn.metapals.pet/assets/animations/bunny-90eb3a88-74a6-49a5-93a5-7245b4d274cd/v5/bunny_spine.json?v=10';
 
 const getFromSendMessageCallback = () => {
